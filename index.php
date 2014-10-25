@@ -31,7 +31,7 @@
 	var lastData;
 	$(document).ready(function() {
 		$.ajax({
-			url: "tiles_json.php",
+			url: "functions/tiles_json.php",
 			async:false,
 			success: function(result) {
 				$("#tile_root").html(result);
@@ -40,7 +40,7 @@
 		loadDynamicObjects();
 	});
 	function checkRefresh() {
-		$.get("tiles_json.php", function(data) {
+		$.get("funcitons/tiles_json.php", function(data) {
 			if (lastData != data) {
 				$("#tile_root").html(data);
 				loadDynamicObjects();
