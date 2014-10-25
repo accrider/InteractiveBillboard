@@ -1,0 +1,655 @@
+/*
+Theme Name: Test
+Theme URI: http://eastweb.ualr.edu
+Description: The WordPress Theme for UALR EAST
+Author: Not B.J. Hansen
+Author URI: http://ualr.edu/bjhansen
+Version: 1.0
+*/
+
+* {
+	margin:0;
+	padding:0;
+}
+@import url('http://fonts.googleapis.com/css?family=PT+Sans');
+body {
+	font-family:verdana, sans-serif;
+	padding-top:275px;
+}
+a, a:visited, a:active {
+	color:#6e2639;
+	text-decoration:underline;
+}
+a:hover {
+	text-decoration:none;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight:100;
+	font-family:"Georgia", verdana, sans-serif;
+}
+ul,ol,li,table,p {
+	font-family:verdana, sans-serif;
+}
+.alignright {
+	float:right;
+}
+.alignright.size-thumbnail, .size-thumbnail, .size-medium {
+	display:inline;
+	margin-bottom:10px;
+	border:solid 4px #ccc;
+}
+h5 a.rsswidget {
+	text-decoration:none;
+	color:#000;
+}
+hr {
+	background-color:#eee;
+	border:none;
+	height:1px;
+	margin:10px 0 10px 0;
+	clear:both;
+}
+.sub-content h3 {
+	margin-bottom:8px;
+}
+.sub-content ul, .sub-content ol {
+	margin-left:35px;
+}
+.breadcrumb {
+	margin-bottom:25px;
+	font-size:.75em;
+}
+.sub-content li {
+	margin-bottom:7px;
+}
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+.main {
+	margin-bottom:30px;
+}
+.content p {
+	margin-bottom:10px;
+	font-size:.85em;
+	line-height:21px;
+}
+.content li {
+	font-size:.85em;
+}
+.container {
+	width:100%;
+}
+.ninja-forms-form-wrap label {
+	font-weight:normal !important;
+	font-size:.85em;
+}
+.ninja-forms-form input[type=submit] {
+	border:solid 1px #333;
+	color:#fff;
+	background-color:#6e2639;
+	padding:5px 15px 5px 15px;
+}
+.ninja-forms-form input[type=submit]:hover {
+	cursor:pointer;
+}
+.ninja-forms-form input[type=text], .ninja-forms-form textarea, .ninja-forms-form select {
+	padding:4px;
+	border:dotted 1px #333;
+	outline:none;
+	font-size:15px;
+}
+.ninja-forms-required-items {
+	font-size:.85em;
+	margin-bottom:20px;
+}
+.fixed-mast {
+	position:relative;
+	//top:0;
+	//left:0;
+	width:100%;
+	background-color:#444;
+	//box-shadow:0 0 10px #000;
+	z-index:1000;
+	border-bottom:1px solid #000;
+	box-shadow: inset 0 -1px 1px 0px #777;
+}
+nav ul {
+	list-style-type:none;
+}
+.full-masthead {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:5;
+}
+.fixed-mast-nav ul li a {
+	display:block;
+	width:100%;
+	text-align:center;
+	padding-top:20px;
+	padding-bottom:20px;
+	color:#ccc;
+	text-decoration:none;
+	font-size:.8em;
+	font-weight:300;
+}
+.fixed-mast-nav ul li a:hover {
+	color: #fff;
+  	background: #555;
+}
+.maroon-full-width {
+	width:100%;
+	height:75px;
+	background: #6e2639; /* Old browsers */
+	background: -moz-linear-gradient(top, #6e2639 0%, #4e1827 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6e2639), color-stop(100%,#4e1827)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #6e2639 0%,#4e1827 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #6e2639 0%,#4e1827 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #6e2639 0%,#4e1827 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #6e2639 0%,#4e1827 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6e2639', endColorstr='#4e1827',GradientType=0 ); /* IE6-9 */
+	//position:fixed;
+	//top:35px;
+	//left:0;
+	z-index:999;
+}
+.logo {
+	display:block;
+}
+.logo .wordmark {
+	display:block;
+	height:55px;
+	width:55px;
+	background-image:url('images/ualr-wordmark.png');
+	background-repeat:no-repeat;
+	background-position:left center;
+	background-size:contain;
+	float:left;
+	text-indent:-9999px;
+	margin-right:7px;
+	margin-top:10px;
+	margin-left:7px;
+	transition: all .2s ease-in;
+}
+.logo .univ-header {
+	vertical-align:baseline;
+}
+.logo .univ-header a {
+	display:none;
+}
+.univ-header,.dept-header {
+	-webkit-margin-before:0;
+	-webkit-margin-after:0;
+}
+.logo .dept-header a {
+	color:#fff;
+	text-decoration:none;
+	font-size:1.30em;
+	font-family:"Georgia", verdana, sans-serif;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	-ms-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+	height:55px;
+	padding-top:25px;
+	display:block;
+}
+.site-nav {
+	width:100%;
+	background-color:#fdfcfe;
+	background-image:-webkit-linear-gradient(top, rgb(253, 252, 254), rgb(232, 231, 233));
+	box-shadow:1px 1px 10px #000;
+	//position:static;
+	margin-bottom:20px;
+	z-index:998;
+}
+.site-nav ul li a {
+	display:block;
+	width:49.86%;
+	float:left;
+	text-align:center;
+	padding-top:13px;
+	padding-bottom:13px;
+	color:#333;
+	text-decoration:none;
+	font-size:.85em;
+	border-bottom:solid 1px #ddd;
+}
+.site-nav ul li:nth-child(odd) a {
+	border-right:solid 1px #ddd;
+}
+.site-nav ul li:last-child a {
+	width:100%;
+	border-right:none;
+}
+.fixed-mast-nav ul li.ualr-small {
+	display:none;
+}
+.site-nav ul li a:hover {
+	background-color:#f5f8fa;
+}
+.flexslider {
+	z-index:4;
+}
+.flex-caption {
+	width: 98%;
+	padding: 1%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.6);
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+	font-weight:100;
+}
+.flex-caption h3 {
+	font-size:19px;
+	margin-bottom:6px;
+}
+.flex-caption p {
+	font-size:13px;
+	margin-bottom:0;
+	line-height:1.4em;
+}
+.sidebar {
+	float:none;
+	width:100%;
+}
+.sidebar-section {
+	border:dotted 1px #999;
+	border-bottom:solid 6px #eee;
+	width:95%;
+	margin-bottom:25px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.sidebar-section h3 {
+	margin-bottom:10px;
+	margin-left:10px;
+	margin-top:10px;
+}
+.sidebar-section ul {
+	list-style-type:none;
+	margin-left:20px;
+}
+.sidebar-section ul li {
+	margin-bottom:10px;
+}
+.main-titles {
+	color:#6e2639;
+	font-size:26px;
+	margin-bottom:15px;
+}
+.main {
+	margin-left:auto;
+	margin-right:auto;
+	float:none;
+	width:95%;
+}
+footer {
+	border-top:dotted 1px #333;
+	width:100%;
+	margin-top:25px;
+	margin-bottom:25px;
+	clear:both;
+}
+.footer-section {
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:30px;
+	margin-top:20px;
+}
+.footer-section h5 {
+	font-size:18px;
+	margin-bottom:10px;
+	margin-top:15px;
+}
+.footer-section p {
+	font-size:.75em;
+}
+.footer-section ul {
+	list-style-type:none;
+	margin-left:5px;
+	margin-right:5px;
+}
+.footer-section ul li {
+	margin-bottom:10px;
+	font-size:.80em;
+}
+.rssItemDate {
+	display:none;
+}
+.rssItemTitle a {
+	font-weight:100;
+	font-size:12px;
+}
+div.rssItem {
+	margin-bottom:5px;
+}
+.slides {
+	position:relative;
+}
+.wp-post-image {
+	margin-bottom:10px;
+	float:left;
+	margin-right:10px;
+}
+.post-date {
+	font-weight:bold;
+}
+.ccm-page-list-title {
+	margin-left:20px;
+}
+.required {
+	color:red;
+}
+.errors {
+	background-color:#F2F5A9;
+	border:dotted 1px red;
+	margin-bottom:15px;
+	padding:10px;
+}
+.errors .error {
+	font-size:.85em;
+	margin-left:20px;
+	margin-top:10px;
+}
+.success {
+	background-color:#81F781;
+	border:dotted 1px #298A08;
+	margin-bottom:15px;
+	padding:10px;
+}
+.tools {
+	display:none;
+}
+.site-nav {
+	height:auto;
+}
+
+@media screen and (min-width:768px) {
+	
+	body {
+		padding-top:180px;
+	}
+	.container {
+		margin-left:10px;
+		margin-right:10px;
+	}
+	.fixed-mast-nav ul li a {
+		width:25%;
+		float:left;
+		border:none;
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+	.logo .univ-header {
+		line-height:0;
+		padding-top:15px;
+		padding-bottom:3px;
+	}
+	.logo .univ-header a {
+		display:inline;
+		color:#fff;
+		font-variant:small-caps;
+		text-decoration:none;
+		font-size:.50em;
+		//font-family:"myriad-pro", verdana, sans-serif;
+		font-family: 'PT Sans', sans-serif;
+		line-height:1em;
+		transition: all .2s ease-in;
+	}
+	.logo .dept-header a {
+		font-size:1.5em;
+		display:inline;
+		padding:0;
+	}
+	.logo .wordmark {
+		width:75px;
+		height:75px;
+		margin:0;
+		margin-right:10px;
+	}
+	.logo {
+		-webkit-transition: all .5s;
+		-moz-transition: all .5s;
+		-ms-transition: all .5s;
+		-o-transition: all .5s;
+		transition: all .5s;
+	}
+	.site-nav {
+		height:43px;
+	}
+	.site-nav ul li a {
+		width:19.87%;
+		float:left;
+		border:none;
+	}
+	.sidebar {
+		float:left;
+		width:24%;
+	}
+	.sidebar-section {
+		width:100%;
+	}
+	.main {
+		width:74%;
+		float:right;
+		margin-left:0;
+		margin-right:0;
+	}
+	.footer-section {
+		float:left;
+		margin-left:0;
+		margin-right:0;
+		border-left:dotted 1px #333;
+		width:22.84%;
+		padding-left:15px;
+		padding-right:5px;
+		height:210px;
+	}
+	.footer-section:first-child {
+		border:none;
+	}
+	.field {
+		margin-bottom:10px;
+	}
+	.field input[type=text], .field input[type=email], .field input[type=tel], .field textarea, .ccm-input-captcha, input.hasDatepicker {
+		padding:5px;
+		border:dotted 1px #333;
+		width:150px !important;
+	}
+	.field textarea {
+		width:auto !important;
+	}
+	.field input[type=checkbox] {
+		margin-bottom:5px;	
+	}
+	.field label {
+		width:165px;
+		margin-right:10px;
+		display:block;
+		float:left;
+		text-align:right;
+		font-size:.85em;
+	}
+	.checkboxPair label {
+		text-align:left;
+		width:auto;
+	}
+	.checkboxList {
+		padding-left:175px;
+		padding-bottom:65px;
+	}
+	.field-text {
+		clear:both;
+	}
+	.captcha label {
+		clear:left;
+		float:left;
+		display:block;
+		margin-top:15px;
+		font-size:.85em;
+		margin-bottom:5px;
+	}
+	.captcha img {
+		clear:both;
+		float:left;
+		margin-right:15px;
+		margin-top:15px;
+	}
+	.captcha-input div {
+		margin-top:5px;
+		font-size:.65em;
+	}
+	.formblock .submit {
+		margin-top:15px;
+		float:left;
+	}
+	.submit {
+		border:dotted 1px #333;
+		background-color:#6e2639;
+		color:#fff;
+		padding:5px 20px 5px 20px;
+	}
+	.submit:hover {
+		cursor:pointer;
+	}
+	.wp-post-image {
+		max-width:100%;
+		width:auto;
+		margin-right:10px;
+		float:left;
+		display:inline;
+	}
+	.site-nav ul li:nth-child(odd) a {
+		border-right:none;
+	}
+	.site-nav ul li:last-child a {
+		width:19.87%;
+		border-right:none;
+	}
+	.headroom {
+    	//transition: height .5s;
+	}
+	.headroom.pinned {
+    	//transform: translateY(100%);
+    	//height:75px;
+	}
+	.headroom.pinned + .logo {
+		//display:none;
+	}
+	.headroom.unpinned {
+    	//transform: translateY(-100%);
+    	//height:0;
+	}
+	.ualr-small img {
+		height:28px;
+		max-height:28px;
+	}
+	.fixed-mast-nav ul li.ualr-small a {
+		padding:2px 5px 2px 5px;
+	}
+}
+
+@media screen and (min-width:960px) {
+	
+	.container {
+		width:960px;
+		margin-right:auto;
+		margin-left:auto;
+	}
+	.logo {
+		width:100%;
+	}
+	.site-nav {
+		position:relative;
+	}
+	.fixed-mast-nav ul li a {
+		width:auto;
+		padding-left:10px;
+		padding-right:10px;
+		border-left:solid 1px #555;
+	}
+	.fixed-mast-nav ul li:last-child a {
+		border-right:solid 1px #555;
+	}
+	.site-nav nav {
+		//clear:both;
+	}
+	.site-nav ul li a {
+		width:19.876666666%;
+		float:left;
+		border:none;
+		border-left:solid 1px #ddd;
+	}
+	.site-nav ul li:last-child a {
+		border-right:solid 1px #ddd;
+	}
+	.searchbox {
+		font-size:14px;
+		height:20px;
+		border:solid 1px #777;
+		padding:0;
+		outline:none;
+		margin:0;
+		border-right:none;
+	}
+	.searchbutton {
+		height:20px;
+		width:25px;
+		margin:0;
+		padding:0;
+		border:solid 1px #fff;
+		border-left:none;
+		text-indent:-9999px;
+		background-color:#6e2639;
+		background-image:url('http://ualr.edu/digital/wp-content/plugins/persistent-navigation/img/search-icon-hi.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		margin-top:-2px;
+		outline:none;
+		display:block;
+		float:right;
+		margin-top:1px;
+	}
+	.searchbutton:hover {
+		cursor:pointer;
+	}
+	.search {
+		float:right;
+	}
+	.fixed-mast-nav {
+		width:65%;
+		float:left;
+	}
+	.tools {
+		display:block;
+		width:42%;
+		height:36px;
+		display:table-cell;
+		vertical-align:middle;
+	}
+	.changing-lab h3 {
+		text-align:center;
+	}
+	.accordion.changing-lab .ui-accordion-header {
+		color:#fff;
+		background-color:#444;
+		background-image:none;
+		outline:none;
+	}
+	
+}

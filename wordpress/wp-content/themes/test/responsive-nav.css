@@ -1,0 +1,76 @@
+/*! responsive-nav.js 1.0.32 by @viljamis */
+
+.nav-collapse {
+	clear:right;
+}
+.nav-collapse ul{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  list-style: none;
+}
+
+.nav-collapse li {
+  width: 100%;
+  display: block;
+}
+
+.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.nav-collapse.opened {
+  max-height: 9999px;
+}
+
+.disable-pointer-events {
+  pointer-events: none !important;
+}
+
+a.nav-toggle {
+	font-size:.8em;
+	padding-top:10px;
+	padding-bottom:10px;
+	display:block;
+	color:#ccc;
+	text-decoration:none;
+	text-align:center;
+	border-bottom:solid 1px #555;
+	font-size:.95em;
+	//box-shadow:0 0 10px #000;
+	text-indent:-9999px;
+	background-image:url("http://eastweb.ualr.edu/wp-content/uploads/2014/10/dropdown-toggle.png");
+	background-position:right 5px center;
+	background-size:auto 90%;
+	background-repeat:no-repeat;
+}
+
+.site-nav a.nav-toggle {
+	background-image:url("http://eastweb.ualr.edu/wp-content/uploads/2014/10/dropdown-toggle-black.png");
+}
+
+a.nav-toggle.active {
+	background-color:#000;
+}
+
+.site-nav a.nav-toggle.active {
+	background-color:#ccc;
+}
+
+@media screen and (min-width: 768px) {
+  .js .nav-collapse {
+    position: relative;
+  }
+  .js .nav-collapse.closed {
+    max-height: none;
+  }
+  a.nav-toggle {
+    display: none;
+  }
+}
