@@ -2,12 +2,10 @@
 include 'mysql.php';
 
 
-$sth = mysqli_query($link, "SELECT * FROM tiles WHERE visible=true ORDER BY tile_order ASC");
-//$rows = array();
-while($r = mysqli_fetch_assoc($sth)) {
-	print($r['tile_contents']);
-    //$rows[] = $r;
+$result = $mysqli->query("SELECT * FROM tiles WHERE visible=true ORDER BY tile_order ASC");
+
+while($row = $result->fetch_assoc()) {
+	print($row['tile_contents']);
 }
-//print json_encode($rows);
 
 ?>
