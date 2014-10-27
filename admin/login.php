@@ -5,7 +5,7 @@ if (isset($_SERVER['CONTENT_TYPE'])) {
 	$username = $_POST['username'];
 	$hash = sha1($_POST['password'] . $_POST['username']);
 	
-	$sql = "select * from users where username = '" . mysql_real_escape_string($username) . "'";
+	$sql = "select * from users where username = '" . $mysqli->real_escape_string($username) . "'";
 	$result = $mysqli->query($sql)or trigger_error($mysqli->error." [$sql]");
 	if ($result->num_rows == 1) {
 		$row = $result->fetch_array();
