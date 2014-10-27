@@ -17,13 +17,7 @@ if (isset($_SERVER['CONTENT_TYPE'])) {
 			$mysqli->query("update users set session = '{$value}' where username = '{$username}'") or trigger_error($mysqli->error);
 			header('Location: index.php');
 			//echo $_SESSION['login'];
-		} else {
-			//invalid
-			echo "Failure 1";
 		}
-	} else {
-		//Invalid
-		echo "Failure 2";
 	}
 }
 ?>
@@ -69,6 +63,7 @@ if (isset($_SERVER['CONTENT_TYPE'])) {
 	
 			<style type="text/css">
 			body { background: url(img/bg-login.jpg) !important; }
+			#alert-box { margin:10px }
 		</style>
 		
 		
@@ -86,7 +81,12 @@ if (isset($_SERVER['CONTENT_TYPE'])) {
 						<a href="#"><i class="halflings-icon cog"></i></a>
 					</div>
 					<h2>Login to your account</h2>
-					<form class="form-horizontal" action="login.php" method="post">
+					<?php
+					if (isset($_SERVER['CONTENT_TYPE'])) {
+					?>
+					<span class="msg"><div id="alert-box" class="alert alert-block">Invalid Username or Password</div></span>
+					<?php } ?>
+					<form class="form-horizontal" method="post">
 						<fieldset>
 							
 							<div class="input-prepend" title="Username">
@@ -109,10 +109,10 @@ if (isset($_SERVER['CONTENT_TYPE'])) {
 							<div class="clearfix"></div>
 					</form>
 					<hr>
-					<h3>Forgot Password?</h3>
+					<!-- <h3>Forgot Password?</h3>
 					<p>
 						No problem, <a href="#">click here</a> to get a new password.
-					</p>	
+					</p>	-->
 				</div><!--/span-->
 			</div><!--/row-->
 			

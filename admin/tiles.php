@@ -14,7 +14,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- end: Mobile Specific -->
 	
+<link rel=stylesheet href="../codemirror/doc/docs.css">
+<link rel=stylesheet href="../codemirror/lib/codemirror.css">
+<script src="../codemirror/lib/codemirror.js"></script>
+<script src="../codemirror/mode/xml/xml.js"></script>
+<script src="../codemirror/mode/javascript/javascript.js"></script>
+<script src="../codemirror/mode/css/css.js"></script>
+<script src="../codemirror/mode/htmlmixed/htmlmixed.js"></script>
+	
+	
 	<!-- start: CSS -->
+
 	<link id="bootstrap-style" href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link id="base-style" href="css/style.css" rel="stylesheet">
@@ -304,7 +314,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-										<span class="avatar"><img src="img/avatar5.jpg" alt="Avatar"></span>
+										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
 										<span class="header">
 											<span class="from">
 										    	Administrator
@@ -435,9 +445,9 @@
 							</div>        
 							<div class="control-group hidden-phone">
 							  <label class="control-label" for="textarea2">Textarea WYSIWYG</label>
-							  <div class="controls">
-								<textarea class="cleditor" id="textarea2" rows="3"></textarea>
-							  </div>
+<form><textarea id="code" name="code">
+Some html maybe
+</textarea></form>
 							</div>
 							<div class="form-actions">
 							  <button type="submit" class="btn btn-primary">Save changes</button>
@@ -542,6 +552,13 @@
 
 		<script src="js/custom.js"></script>
 	<!-- end: JavaScript-->
-	
+<script type="text/javascript">
+      // Initialize CodeMirror editor with a nice html5 canvas demo.
+      var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+        mode: 'text/html',
+		lineNumbers: true,
+		indentWithTabs: true
+      });
+</script>
 </body>
 </html>
