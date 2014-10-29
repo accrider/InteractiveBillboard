@@ -10,7 +10,7 @@ function getHeader() {
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>Interactive Billboard Manager</span></a>
+				<a class="brand" href="./"><span>Interactive Billboard Manager</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -380,7 +380,7 @@ function getHead() {
 	
 		<script src="js/counter.js"></script>
 	
-		<script src="js/retina.js"></script>
+		<!-- <script src="js/retina.js"></script> -->
 
 		<script src="js/custom.js"></script>
 	<!-- end: JavaScript-->
@@ -401,7 +401,7 @@ function getSidebar() {
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li><a href="index.php"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>	
 						<li><a href="manage.php"><i class="icon-tasks"></i><span class="hidden-tablet"> Manage Tiles</span></a></li>	
-						<li><a href="tiles.php"><i class="icon-edit"></i><span class="hidden-tablet"> Modify Tiles</span></a></li>	
+						<li><a href="tiles.php"><i class="icon-edit"></i><span class="hidden-tablet"> Create New Tile</span></a></li>	
 						<!-- <li><a href="messages.html"><i class="icon-envelope"></i><span class="hidden-tablet"> Messages</span></a></li>
 						<li><a href="tasks.html"><i class="icon-tasks"></i><span class="hidden-tablet"> Tasks</span></a></li>
 						<li><a href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>

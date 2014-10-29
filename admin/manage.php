@@ -6,6 +6,32 @@ include './functions/templates.php';
 <!DOCTYPE html>
 <html lang="en">
 <?php getHead(); ?>
+<script>
+	function changeVisible(id) {
+	$.ajax({
+		url: './functions/change_visible.php?id=' + id,
+		success: function(result) {
+			//alert(result);
+			tileId = "#tileI"+id;
+			//alert($(tileId).text());
+			if ($(tileId).text() == 'Inactive') {
+				$(tileId).attr('class', 'label label-success');
+				$(tileId).text('Active');
+			} else {
+				$(tileId).attr('class', 'label label-important');
+				$(tileId).text('Inactive');
+			}
+		},
+		error: function(result) {
+			alert("Something unexpected happened");
+		}
+	});
+	}
+	function newAlert (type, message) {
+		var options = $.parseJSON('{"text":"'+message+'","layout":"top","type":"'+type+'"}');
+		noty(options);
+	}
+	</script>
 <body>
 <?php getHeader(); ?>
 		<div class="container-fluid-full">
@@ -33,10 +59,7 @@ include './functions/templates.php';
 				<li><a href="#">Manage Tiles</a></li>
 			</ul>
 
-	<div class="row-fluid sortable">	
-				<div class="box-content alerts" id="alert-area">
-
-				</div>
+	<div class="row-fluid">	
 				<div class="box span12">
 					<div class="box-header" data-original-title>
 						<h2><i class="halflings-icon user"></i><span class="break"></span>Members</h2>
@@ -106,20 +129,7 @@ while($row = $result->fetch_array()) {
 			<!-- end: Content -->
 		</div><!--/#content.span10-->
 		</div><!--/fluid-row-->
-		
-	<div class="modal hide fade" id="myModal">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal">×</button>
-			<h3>Settings</h3>
 		</div>
-		<div class="modal-body">
-			<p>Here settings can be configured...</p>
-		</div>
-		<div class="modal-footer">
-			<a href="#" class="btn" data-dismiss="modal">Close</a>
-			<a href="#" class="btn btn-primary">Save changes</a>
-		</div>
-	</div>
 	
 	<div class="clearfix"></div>
 	
@@ -133,31 +143,6 @@ while($row = $result->fetch_array()) {
 	</footer>
 	
 	<!-- end: JavaScript-->
-	<script>
-	function changeVisible(id) {
-	$.ajax({
-		url: './functions/change_visible.php?id=' + id,
-		success: function(result) {
-			//alert(result);
-			tileId = "#tileI"+id;
-			//alert($(tileId).text());
-			if ($(tileId).text() == 'Inactive') {
-				$(tileId).attr('class', 'label label-success');
-				$(tileId).text('Active');
-			} else {
-				$(tileId).attr('class', 'label label-important');
-				$(tileId).text('Inactive');
-			}
-		},
-		error: function(result) {
-			alert("Something unexpected happened");
-		}
-	});
-	}
-	function newAlert (type, message) {
-		$("#alert-area").append($("<div id='tempalert' class='alert alert-success' data-alert><center> " + message + " </center></div>").fadeIn("slow"));
-		$("#tempalert").delay(4000).fadeOut("slow", function () { $(this).remove(); });
-	}
-	</script>
+	
 </body>
 </html>
