@@ -1,7 +1,7 @@
 <?php
 include '../functions/mysql.php';
-
-if (isset($_SERVER['CONTENT_TYPE'])) {
+$failedLogin = false;
+if (isset($_SERVER['CONTENT_TYPE']) && isset($_POST['password']) && isset($_POST['username'])) {
 	$username = $_POST['username'];
 	$hash = sha1($_POST['password'] . $_POST['username']);
 	
@@ -17,6 +17,8 @@ if (isset($_SERVER['CONTENT_TYPE'])) {
 			$mysqli->query("update users set session = '{$value}' where username = '{$username}'") or trigger_error($mysqli->error);
 			header('Location: index.php');
 			//echo $_SESSION['login'];
+		} else {
+			$failedLogin = true;
 		}
 	}
 }
@@ -82,7 +84,7 @@ if (isset($_SERVER['CONTENT_TYPE'])) {
 					</div>
 					<h2>Login to your account</h2>
 					<?php
-					if (isset($_SERVER['CONTENT_TYPE'])) {
+					if ($failedLogin) {
 					?>
 					<span class="msg"><div id="alert-box" class="alert alert-block">Invalid Username or Password</div></span>
 					<?php } ?>
