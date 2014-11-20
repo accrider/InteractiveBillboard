@@ -80,7 +80,7 @@ include './functions/templates.php';
 							  </tr>
 						  </thead>   
 						  <tbody>
-						  <?php
+<?php
 include './functions/mysql.php';
 
 $result = $mysqli->query("SELECT * FROM tiles order by tile_id desc");
@@ -100,17 +100,12 @@ while($row = $result->fetch_array()) {
 	?>
 	</td>
 	<td class="center">
-		<!-- <button class="btn btn-small btn-success">Change Visibility</button> -->
-		
 		<button class="btn btn-primary" onClick="changeVisible('<?=$row['tile_id']?>');newAlert('success','Visiblity Changed!')" href="#">
 			<i class="halflings-icon white halflings-icon eye-open"></i>  Change Visibility 
 		</button>
-		<!-- <a class="btn btn-info" href="#">
-			<i class="halflings-icon white edit"></i>  
+		<a class="btn btn-info" href="edit.php?id=<?=$row['tile_id']?>&link=<?=$_SERVER['PHP_SELF']?>">
+			<i class="halflings-icon white edit"></i> Edit
 		</a>
-		<a class="btn btn-danger" href="#">
-			<i class="halflings-icon white trash"></i> 
-		</a>-->
 	</td>
 </tr>
 <?php
